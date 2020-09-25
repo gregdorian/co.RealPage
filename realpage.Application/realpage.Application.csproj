@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\realpage.Domain\realpage.Domain.Core\realpage.Domain.Core.csproj" />
+    <ProjectReference Include="..\realpage.Domain\realpage.Domain.Entities\realpage.Domain.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
