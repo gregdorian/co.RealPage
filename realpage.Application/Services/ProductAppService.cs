@@ -11,11 +11,11 @@ namespace realpage.Application.Services
 {
     public class ProductAppService : BaseAppService<Products>, IProductsAppService
     {
-        private readonly IProductsService productsService;
+        private readonly IProductsService ProductsService;
 
         public ProductAppService(IProductsService productsService) : base(productsService)
         {
-            this.productsService = productsService;
+            this.ProductsService = productsService;
         }
      }
 }

@@ -11,11 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "realpage.Domain.Entities", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "realpage.Application", "realpage.Application\realpage.Application.csproj", "{F3C9F8BC-1268-4CA1-AC36-51A9CBAA7666}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "realpage.Services.Api", "realpage.Services.Api\realpage.Services.Api.csproj", "{4F61360D-C3F9-4A6A-AFA6-FB3A41A599B2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "realpage.UI.Web", "realpage.UI.Web\realpage.UI.Web.csproj", "{80990AB4-F52A-4AE4-8B69-FD3AFE73377A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "realpage.Services.UI.Api", "realpage.Services.UI.Api\realpage.Services.UI.Api.csproj", "{3F7FC202-94FE-4188-8265-8CAF8A3FB52A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "realpage.Services.UI.Api", "realpage.Services.UI.Api\realpage.Services.UI.Api.csproj", "{3F7FC202-94FE-4188-8265-8CAF8A3FB52A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,14 +35,6 @@ Global
 		{F3C9F8BC-1268-4CA1-AC36-51A9CBAA7666}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3C9F8BC-1268-4CA1-AC36-51A9CBAA7666}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3C9F8BC-1268-4CA1-AC36-51A9CBAA7666}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F61360D-C3F9-4A6A-AFA6-FB3A41A599B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F61360D-C3F9-4A6A-AFA6-FB3A41A599B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F61360D-C3F9-4A6A-AFA6-FB3A41A599B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F61360D-C3F9-4A6A-AFA6-FB3A41A599B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80990AB4-F52A-4AE4-8B69-FD3AFE73377A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80990AB4-F52A-4AE4-8B69-FD3AFE73377A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80990AB4-F52A-4AE4-8B69-FD3AFE73377A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80990AB4-F52A-4AE4-8B69-FD3AFE73377A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F7FC202-94FE-4188-8265-8CAF8A3FB52A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F7FC202-94FE-4188-8265-8CAF8A3FB52A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F7FC202-94FE-4188-8265-8CAF8A3FB52A}.Release|Any CPU.ActiveCfg = Release|Any CPU

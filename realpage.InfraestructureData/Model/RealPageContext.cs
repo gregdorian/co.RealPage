@@ -25,6 +25,7 @@ namespace realpage.InfraestructureData.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //**** Solo para Realizarel Primer Initial-Migration  ****
             if (!optionsBuilder.IsConfigured)
             {
                 IConfigurationRoot configuration = new ConfigurationBuilder()
@@ -38,7 +39,8 @@ namespace realpage.InfraestructureData.Model
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
+           base.OnModelCreating(builder);
+           builder.Seed();
         }
 
     }

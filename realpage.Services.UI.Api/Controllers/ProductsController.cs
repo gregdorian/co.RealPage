@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using realpage.Application.Interfaces;
 using realpage.Domain.Entities;
 using realpage.InfraestructureData.Model;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace realpage.Services.UI.Api.Controllers
 {
@@ -34,6 +33,7 @@ namespace realpage.Services.UI.Api.Controllers
 
         // GET: api/<ProductsController>
         [HttpGet]
+        [Authorize(Roles = "Administrator, RegularUser")]
         public IEnumerable<Products> GetAll()
         {
             if (User.Identity.IsAuthenticated)
@@ -51,6 +51,7 @@ namespace realpage.Services.UI.Api.Controllers
 
         // GET api/<ProductsController>/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "Administrator, RegularUser")]
         public ActionResult<Products> Get(int id)
         {
             var product = ProductFactory.GetById(id);
@@ -65,6 +66,8 @@ namespace realpage.Services.UI.Api.Controllers
 
         // POST api/<ProductsController>
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public void Post([FromBody] Products value)
         {
             if (value != null)
@@ -80,6 +83,8 @@ namespace realpage.Services.UI.Api.Controllers
 
         // PUT api/<ProductsController>/5
         [HttpPut("{id}")]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public void Put(int id, [FromBody] Products value)
         {
             var prod = ProductFactory.GetById(id);
@@ -96,6 +101,7 @@ namespace realpage.Services.UI.Api.Controllers
 
         // DELETE api/<ProductsController>/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         public void Delete(int id)
         {
              ProductFactory.Delete(id);

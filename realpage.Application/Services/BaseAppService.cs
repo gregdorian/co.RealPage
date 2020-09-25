@@ -23,19 +23,10 @@ namespace realpage.Application.Services
             this.baseService.Add(entity);
         }
 
-        public void add(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
+  
         public void Delete(int id)
         {
             this.baseService.Delete(id);
-        }
-
-        public void delete(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public void Dispose()
@@ -49,29 +40,16 @@ namespace realpage.Application.Services
             return this.baseService.GetAll();
         }
 
-        public IEnumerable<TEntity> getAll()
-        {
-            throw new NotImplementedException();
-        }
 
         public TEntity GetById(int id)
         {
             return this.baseService.GetById(id);
         }
 
-        public TEntity getById(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public void Modify(TEntity entity)
         {
             this.baseService.Modify(entity);
-        }
-
-        public void modify(TEntity entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }
