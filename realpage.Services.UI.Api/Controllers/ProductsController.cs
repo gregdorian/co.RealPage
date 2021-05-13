@@ -19,39 +19,39 @@ namespace realpage.Services.UI.Api.Controllers
         private readonly IProductsAppService ProductFactory;
 
         private readonly ILogger<ProductsController> _logger;
-        private readonly UserManager<RpUsers> userManager;
+        //private readonly UserManager<RpUsers> userManager;
 
         public ProductsController(IProductsAppService productFactory, 
-                                  ILogger<ProductsController> logger,
-                                  UserManager<RpUsers> userManager)
+                                  ILogger<ProductsController> logger)
         {
             this.ProductFactory = productFactory;
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            this.userManager = userManager;
+            //this.userManager = userManager; ,
+            //UserManager<RpUsers> userManager
         }
 
 
         // GET: api/<ProductsController>
         [HttpGet]
-        [Authorize(Roles = "Administrator, RegularUser")]
+        //[Authorize(Roles = "Administrator, RegularUser")]
         public IEnumerable<Products> GetAll()
         {
-            if (User.Identity.IsAuthenticated)
-            {
+            //if (User.Identity.IsAuthenticated)
+            //{
 
                 var lstProducts = ProductFactory.GetAll();
 
                 _logger.LogInformation($"Status Listed: ");
 
                 return lstProducts;
-            }
-            else
-               return null;
+            //}
+            //else
+            //   return null;
         }
 
         // GET api/<ProductsController>/5
         [HttpGet("{id}")]
-        [Authorize(Roles = "Administrator, RegularUser")]
+        //[Authorize(Roles = "Administrator, RegularUser")]
         public ActionResult<Products> Get(int id)
         {
             var product = ProductFactory.GetById(id);
@@ -67,7 +67,7 @@ namespace realpage.Services.UI.Api.Controllers
         // POST api/<ProductsController>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public void Post([FromBody] Products value)
         {
             if (value != null)
@@ -84,7 +84,7 @@ namespace realpage.Services.UI.Api.Controllers
         // PUT api/<ProductsController>/5
         [HttpPut("{id}")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public void Put(int id, [FromBody] Products value)
         {
             var prod = ProductFactory.GetById(id);
@@ -101,7 +101,7 @@ namespace realpage.Services.UI.Api.Controllers
 
         // DELETE api/<ProductsController>/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public void Delete(int id)
         {
              ProductFactory.Delete(id);

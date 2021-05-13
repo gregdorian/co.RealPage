@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using realpage.InfraestructureData.Model;
 
 namespace realpage.InfraestructureData.Migrations
 {
     [DbContext(typeof(RealPageContext))]
-    partial class RealPageContextModelSnapshot : ModelSnapshot
+    [Migration("20210513172338_nuTable")]
+    partial class nuTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

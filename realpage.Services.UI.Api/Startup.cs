@@ -14,7 +14,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using realpage.Application.Interfaces;
 using realpage.Application.Services;
+using realpage.Domain.Core;
+using realpage.Domain.Core.Interfaces.Repositories;
+using realpage.Domain.Core.Interfaces.Services;
 using realpage.InfraestructureData.Model;
+using realpage.InfraestructureData.Repositories;
 
 namespace realpage.Services.UI.Api
 {
@@ -30,7 +34,20 @@ namespace realpage.Services.UI.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
+
+
+            //Servicios de la capa de aplicación con servicios
+            services.AddScoped(typeof(IBaseAppService<>), typeof(BaseAppService<>));
             services.AddScoped<IProductsAppService, ProductAppService>();
+
+
+            //el dominio a los de infraestructura
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddScoped<IProductsService, ProductsService>();
+
+            //infraestructura o persistencia
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IProductsRepository, ProductsRepository>();
             services.AddControllers();
         }
 
